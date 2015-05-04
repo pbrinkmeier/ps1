@@ -1,5 +1,5 @@
 colour = (x, y) ->
-  (str) -> '\\[\\e[' + x + ';' + y + 'm\\]' + str + '\\[\\e[m\\]'
+  (str) -> "\\[\\e[#{x};#{y}m\\]#{str}\\[\\e[m\\]"
 
 module.exports =
   black: colour 0, 30
@@ -22,7 +22,7 @@ module.exports =
     purple: colour 1, 35
     red: colour 1, 31
 
-  standard: (str) -> '\\[\\e[0m\\]' + str + '\\[\\e[m\\]'
+  standard: (str) -> "\\[\\e[0m\\]#{str}\\[\\e[m\\]"
   colour: (x, y, str) -> colour(x, y)(str)
 
   clock: '\\t'
@@ -44,4 +44,4 @@ module.exports =
   n: '\n'
   t: '\t'
 
-  cmd: (cmd) -> '$(' + cmd + ')'
+  cmd: (cmd) -> "$(#{cmd})"
