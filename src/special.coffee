@@ -44,4 +44,4 @@ module.exports =
   n: '\n'
   t: '\t'
 
-  cmd: (cmd) -> '`' + cmd + '`'
+  cmd: (cmd) -> '$(' + cmd + ')'
